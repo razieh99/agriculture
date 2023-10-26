@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>6.1</ProjectVersion>
+    <ToolchainName>com.HPInfoTech.CodeVisionAVR.C</ToolchainName>
+    <ProjectGuid>{EA3BC2D0-423D-497C-A76A-A46C3F34E8A0}</ProjectGuid>
+    <avrdevice>ATmega128A</avrdevice>
+    <avrdeviceseries>none</avrdeviceseries>
+    <OutputType>Executable</OutputType>
+    <Language>C</Language>
+    <OutputFileName>$(MSBuildProjectName)</OutputFileName>
+    <OutputFileExtension>.cof</OutputFileExtension>
+    <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
+    <AssemblyName>agriculture10</AssemblyName>
+    <Name>agriculture10</Name>
+    <RootNamespace>agriculture10</RootNamespace>
+    <ToolchainFlavour>Native</ToolchainFlavour>
+    <KeepTimersRunning>true</KeepTimersRunning>
+    <OverrideVtor>false</OverrideVtor>
+    <OverrideVtorValue />
+    <eraseonlaunchrule>0</eraseonlaunchrule>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <ToolchainSettings>
+      <CV>
+        <CVProjectPath>"agriculture10.prj"</CVProjectPath>
+      </CV>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <ToolchainSettings>
+      <CV>
+        <CVProjectPath>"agriculture10.prj"</CVProjectPath>
+      </CV>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="agriculture10.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Folder Include="glcd_fonts\" />
+    <Compile Include="glcd_fonts\arial_narrow_bold.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Folder Include="glcd_icons\" />
+    <Compile Include="glcd_icons\back.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="glcd_icons\ec.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="glcd_icons\hum.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="glcd_icons\setting.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="glcd_icons\soil.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="glcd_icons\sun.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="glcd_icons\temp.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Folder Include="glcd_libs\" />
+    <Compile Include="glcd_libs\glcdsia.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="glcd_libs\lcd_touch.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="dht22.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="glcd_icons\logo.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="glcd_icons\pH30_30.c">
+      <SubType>compile</SubType>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(AVRSTUDIO_EXE_PATH)\\vs\\CV.targets" />
+</Project>
